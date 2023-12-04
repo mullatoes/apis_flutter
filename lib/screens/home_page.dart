@@ -79,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     if (response.statusCode == 200) {
       var post =
-          Post.fromJson(jsonEncode(response.body) as Map<String, dynamic>);
+          Post.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
       return post;
     } else {
       print('Error: ${response.statusCode}');
